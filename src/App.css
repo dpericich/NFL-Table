@@ -22,3 +22,7 @@ tr:hover td {
 tr:nth-child(odd) {
   background-color: lightgrey;
 }
+
+th {
+  text-transform: uppercase;
+}
