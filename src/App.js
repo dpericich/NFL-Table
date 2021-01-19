@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
+import TeamDataTable from "./components/TeamDataTable";
 
 const players = [
   {
@@ -19,7 +20,7 @@ const players = [
   {
     team: "Kansas City Chiefs",
     number: 15,
-    position: "QuarterBack",
+    position: "Quarterback",
     name: "Patrick Mahomes",
     years: 4,
   },
@@ -37,43 +38,54 @@ const players = [
     name: "Sammy Watkins",
     years: 8,
   },
+  {
+    team: "Buffalo Bills",
+    number: 17,
+    position: "Quarterback",
+    name: "Josh Allen",
+    years: 3,
+  },
+  {
+    team: "Buffalo Bills",
+    number: 11,
+    position: "Wide Receiver",
+    name: "Cole Beasley",
+    years: 9,
+  },
+  {
+    team: "Buffalo Bills",
+    number: 14,
+    position: "Wide Receiver",
+    name: "Stefon Diggs",
+    years: 6,
+  },
+  {
+    team: "Buffalo Bills",
+    number: 25,
+    position: "Runningback",
+    name: "Taiwan Jones",
+    years: 10,
+  },
+  {
+    team: "Buffalo Bills",
+    number: 88,
+    position: "Tight End",
+    name: "Dawson Know",
+    years: 2,
+  },
+  {
+    team: "Kansas City Chiefs",
+    number: 25,
+    position: "Runningback",
+    name: "Clyde Edwards-Helaire",
+    years: 1,
+  },
 ];
 
-function App() {
-  // Create instances of useState array for each key in the first array object to allow
-  // us to sort in ASC & DESC order
-  const [sortedPlayers, setSortedPlayers] = useState(players);
-
-  const sortByNumber = () => {
-    let sortedNumbers = sortedPlayers.sort((a, b) => a.number - b.number);
-    setSortedPlayers((sortedPlayers) => [...sortedNumbers]);
-  };
-
-  // Create array of tableHeaders JSX elements based off of the keys for the first object
-  // in our players array
-  const tableHeaders = [];
-  for (let key in players[0]) {
-    tableHeaders.push(<th>{key}</th>);
+class App extends React.Component {
+  render() {
+    return <TeamDataTable players={players} />;
   }
-
-  return (
-    <table>
-      <thead>
-        <tr>{tableHeaders}</tr>
-      </thead>
-      <tbody>
-        {sortedPlayers.map((player) => (
-          <tr key={`${player.number} ${player.name}`}>
-            <td>{player.team}</td>
-            <td>{player.number}</td>
-            <td>{player.position}</td>
-            <td>{player.name}</td>
-            <td>{player.years}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
 }
 
 export default App;
