@@ -62,7 +62,7 @@ const players = [
   {
     team: "Buffalo Bills",
     number: 25,
-    position: "Runningback",
+    position: "Running Back",
     name: "Taiwan Jones",
     years: 10,
   },
@@ -76,8 +76,22 @@ const players = [
   {
     team: "Kansas City Chiefs",
     number: 25,
-    position: "Runningback",
+    position: "Running Back",
     name: "Clyde Edwards-Helaire",
+    years: 1,
+  },
+  {
+    team: "Kansas City Chiefs",
+    number: 38,
+    position: "Cornerback",
+    name: "L'Jarius Sneed",
+    years: 1,
+  },
+  {
+    team: "Kansas City Chiefs",
+    number: 50,
+    position: "Linebacker",
+    name: "Willie Gay",
     years: 1,
   },
 ];

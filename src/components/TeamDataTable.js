@@ -41,17 +41,27 @@ class TeamDataTable extends React.Component {
     }
   };
 
+  /**
+   * @function sortColumn - onclick, update table state to toggle the boolean for the value and the
+   * order of the table values fed to the table component
+   * @param {string} key - the column name that we want to toggle
+   * @return - updates the state of each individual column, as well as the players array sorted in
+   * ASC or DESC order
+   */
+
   sortColumn = (key) => {
-    let descending = this.state.sort[key];
-    let descendingBool = descending.isDescending;
-    console.log(descendingBool);
-    if (descendingBool) {
-      let sortedPlayers = this.state.players.sort((a, b) => a.key - b.key);
-      this.setState({ players: sortedPlayers });
-    } else if (!descendingBool) {
-      let sortedPlayers = this.state.players.sort((a, b) => b.key - a.key);
-      this.setState({ players: sortedPlayers });
+    let currentColumn = this.state.sort[key];
+    if (currentColumn.isDescending) {
+      let ascendingPlayers = this.state.players.sort((a, b) => a[key] - b[key]);
+      this.setState({ players: ascendingPlayers }, console.log("I was sorted"));
+    } else {
+      let descendingPlayers = this.state.players.sort(
+        (a, b) => b[key] - a[key]
+      );
+      this.setState({ players: descendingPlayers });
     }
+    let sort = { ...this.state.sort };
+    sort[key].isDescending = !sort[key].isDescending;
   };
 
   render() {

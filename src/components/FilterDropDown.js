@@ -6,7 +6,7 @@ const FilterDropDown = ({ items, value, getValue }) => {
 
   // Loop over all items and if the value does not exist in the uniqueItems array, add it
   // to the array. Otherwise continue
-  let selectOptions = items.map((item) => {
+  items.forEach((item) => {
     if (!uniqueItems.includes(item[value])) {
       uniqueItems.push(item[value]);
     }
