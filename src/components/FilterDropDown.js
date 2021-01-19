@@ -2,7 +2,7 @@ import React from "react";
 
 const FilterDropDown = ({ items, value, getValue }) => {
   // Create an empty array to store our unique items when iterate through our input
-  let uniqueItems = [""];
+  let uniqueItems = ["No / Clear Filter"];
 
   // Loop over all items and if the value does not exist in the uniqueItems array, add it
   // to the array. Otherwise continue
@@ -20,7 +20,9 @@ const FilterDropDown = ({ items, value, getValue }) => {
         onChange={(e) => getValue(e.target.value)}
       >
         {uniqueItems.map((item) => (
-          <option className="drop-down__option">{item}</option>
+          <option className="drop-down__option" key={item.name}>
+            {item}
+          </option>
         ))}
       </select>
     </div>
