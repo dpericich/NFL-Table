@@ -1,0 +1,25 @@
+table {
+  font-size: 3rem;
+  max-height: 1rem;
+}
+
+th {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: $primary-font-color;
+  padding: 1.5rem;
+}
+
+tr:nth-child(odd) {
+  background-color: $secondary-background;
+}
+
+td {
+  padding: 1rem;
+  max-height: 1rem;
+  vertical-align: top;
+}
+
+tr:hover {
+  background-color: $tertiary-background;
+}
