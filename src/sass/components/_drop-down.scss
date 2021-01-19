@@ -10,7 +10,25 @@
   &__select {
     font-size: 3rem;
     background-color: $secondary-background;
-    padding: 0.5rem;
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid $primary-font-color;
+    cursor: pointer;
+    transition: background-color 0.8s ease, color 0.8s ease;
+
+    &:hover,
+    &:focus {
+      background-color: $tertiary-background;
+      color: #fff;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 1rem;
+    right: 3rem;
   }
 
   &__option {
